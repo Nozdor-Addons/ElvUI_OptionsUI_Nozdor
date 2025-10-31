@@ -299,7 +299,28 @@ E.Options.args.auras = {
 							desc = L["Allow LBF to handle the skinning of this element."]
 						}
 					}
-				}
+				},
+				ignore = {
+					order = 12,
+					type = "group",
+					guiInline = true,
+					name = "Игнорировать ауры",
+					args = {
+						ignoreString = {
+							order = 1,
+							type = "input",
+							width = "full",
+							name = "ID способностей для игнора",
+							desc = "Писать id через запятую/пробел для игнорирования баффа.",
+							get = function(info) return E.db.auras.ignoreString or "" end,
+							set = function(info, value)
+								E.db.auras.ignoreString = value
+								A:RebuildIgnoreList()
+								A:UpdateHeader(ElvUIPlayerBuffs); A:UpdateHeader(ElvUIPlayerDebuffs)
+							end,
+						},
+					},
+				},
 			}
 		},
 		buffs = {

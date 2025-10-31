@@ -47,12 +47,13 @@ E.Options.args = {
 		name = format("%s: |cff99ff33%s|r", L["Version"], E.version),
 		width = "full"
 	},
+	
 	RepositionWindow = {
 		order = 2,
 		type = "execute",
 		name = L["Reposition Window"],
 		desc = L["Reset the size and position of this frame."],
-		customWidth = 175,
+		customWidth = 170,
 		func = function()
 			E:UpdateConfigSize(true)
 		end
@@ -92,7 +93,7 @@ E.Options.args = {
 		order = 6,
 		type = "execute",
 		name = L["Toggle Anchors"],
-		customWidth = 150,
+		customWidth = 175,
 		desc = L["Unlock various elements of the UI to be repositioned."],
 		func = function()
 			E:ToggleMoveMode()
