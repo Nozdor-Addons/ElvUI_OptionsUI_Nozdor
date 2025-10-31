@@ -45,7 +45,7 @@ jobs:
       - name: Send to Discord (attach)
         if: steps.make_zip.outputs.small == 'true'
         env:
-          WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_TEST }}
+          WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_ELVUIOP }}
         run: |
           REPO_NAME='${{ github.event.repository.name }}'
           COMMITS_JSON='${{ toJson(github.event.commits) }}'
@@ -92,7 +92,7 @@ jobs:
       - name: Notify Discord with release link
         if: steps.make_zip.outputs.small != 'true'
         env:
-          WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_TEST }}
+          WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_ELVUIOP }}
         run: |
           REPO_NAME='${{ github.event.repository.name }}'
           COMMITS_JSON='${{ toJson(github.event.commits) }}'
